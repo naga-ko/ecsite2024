@@ -27,5 +27,35 @@
     "colors": "赤",
     "maker": "（株）菓道",
     "url": "kabayakisan"
+  },
+  {
+    "itemphotos": [
+      "kabayakisan01.jpg",
+      "kabayakisan02.jpg",
+      "kabayakisan03.jpg"
+    ],
+    "name": "蒲焼さん太郎",
+    "price": 15,
+    "state": true,
+    "text": "魚肉のすり身を板状にし、うなぎの蒲焼きをイメージしたタレで味付けしました。 うなぎの蒲焼きという高級品を駄菓子で気軽に食べられるように企画した商品です。",
+    "id": 4971749110335,
+    "colors": "赤",
+    "maker": "（株）菓道",
+    "url": "kabayakisan"
+  },
+  {
+    "itemphotos": [
+      "kabayakisan01.jpg",
+      "kabayakisan02.jpg",
+      "kabayakisan03.jpg"
+    ],
+    "name": "蒲焼さん太郎",
+    "price": 15,
+    "state": true,
+    "text": "魚肉のすり身を板状にし、うなぎの蒲焼きをイメージしたタレで味付けしました。 うなぎの蒲焼きという高級品を駄菓子で気軽に食べられるように企画した商品です。",
+    "id": 4971749110335,
+    "colors": "赤",
+    "maker": "（株）菓道",
+    "url": "kabayakisan"
   }
 ]
