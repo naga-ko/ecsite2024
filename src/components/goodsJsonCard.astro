@@ -3,22 +3,37 @@ import goods from "../data/goods.json";
 console.log(goods);
 ---
 
-<ul class="item">
-  {goods.map((list) =>
-     <li>{list.name}</li>
-     <img src=`/images/${list.itemphotos[0]}` />
-     <p>{list.text}</p>
-  )}
-</ul>
+<div class="goods-card">
+  <ul class="goods-list">
+    {goods.map((list) =>
+        <a href="">
+          <li>{list.name}</li>
+        </a>
+        <img src=`/images/${list.itemphotos[0]}` />
+        <p>{list.text}</p>
+    )}
+  </ul>
+</div>
 <style lang="scss">
-.item{
+.goods-card{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.goods-list{
   text-decoration: none;
     display: block;
     width: 25%;
     padding-bottom: 3rem;
     margin-right: 10%;
     img{
-      max-width:250px;
+      width:100%;
+      max-width:300px;
+      min-width: 200px;
+    }
+    a{
+      list-style-type: none;
+      text-decoration: none;
     }
 }
 </style>

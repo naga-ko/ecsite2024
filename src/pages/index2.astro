@@ -7,18 +7,16 @@ import { getCollection } from "astro:content";
 <Layout>
   <main class="main">
     <div class="main__inner">
-      <div class="main__card__list">
-        <Goodscard />
-      </div>
+      <Goodscard />
     </div>
   </main>
-  <style lang="scss">
-    .main {
-      &__card__list {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-      }
-    }
-  </style>
 </Layout>
+<style lang="scss">
+  .main {
+    &__inner {
+      width: 80%;
+      margin-right: 0;
+      margin-left: 0;
+    }
+  }
+</style>
