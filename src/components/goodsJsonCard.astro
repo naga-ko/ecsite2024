@@ -8,9 +8,11 @@ console.log(goods);
     {
       goods.map((list) => (
         <li class="goods-item">
-          <a href="#">{list.name}</a>
-          <img src={`/images/${list.itemphotos[0]}`} alt={list.name} />
-          <p>{list.text}</p>
+          <a href="#">
+            <img src={`/images/${list.itemphotos[0]}`} alt={list.name} />
+            <p>{list.name}</p>
+            <p>¥{list.price}</p>
+          </a>
         </li>
       ))
     }
@@ -20,30 +22,26 @@ console.log(goods);
 <style lang="scss">
   .goods-card {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
   }
 
   .goods-list {
     display: flex;
     flex-wrap: wrap;
-    padding: 0;
     margin: 0;
     list-style-type: none;
+    gap: 1rem;
+    max-width: calc(100% - 1rem);
+    justify-content: flex-start;
   }
 
   .goods-item {
     text-decoration: none;
     display: block;
-    width: 25%;
+    width: calc(33.33% - 1rem);
     margin-bottom: 3rem;
-    margin-right: 10%;
     box-sizing: border-box;
     max-width: 350px;
-
-    &:nth-child(3n) {
-      margin-right: 0;
-    }
 
     img {
       width: 100%;
@@ -53,31 +51,25 @@ console.log(goods);
 
     a {
       display: block;
+      text-align: left;
       list-style-type: none;
       text-decoration: none;
+      color: #000;
     }
 
     p {
       text-align: left;
       margin-top: 0.5rem;
+      color: #000;
     }
   }
 
   @media (max-width: 650px) {
     .goods-item {
-      text-decoration: none;
-      display: block;
-      width: 40%;
+      width: calc(50% - 1rem);
       margin-bottom: 3rem;
       box-sizing: border-box;
       max-width: 350px;
-
-      &:nth-child(3n) {
-        margin-right: 10%;
-      }
-      &:nth-child(2n) {
-        margin-right: 0;
-      }
     }
   }
 </style>
