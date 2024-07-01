@@ -4,10 +4,10 @@ console.log(goods);
 ---
 
 <div class="goods-card">
-  <ul class="goods-list">
+  <ul class="goods-list" id="goodsList">
     {
-      goods.map((list) => (
-        <li class="goods-item">
+      goods.slice(0, 9).map((list, index) => (
+        <li class="goods-item" key={index}>
           <a href="#">
             <img src={`/images/${list.itemphotos[0]}`} alt={list.name} />
             <p>{list.name}</p>
@@ -18,6 +18,89 @@ console.log(goods);
     }
   </ul>
 </div>
+
+<button id="loadMoreBtn" class="load-more-btn" style="display: none;">
+  Read More
+</button>
+
+<button id="closeBtn" class="close-btn" style="display: none;"> Close</button>
+
+<script>
+  import goods from "../data/goods.json";
+
+  const goodsList = document.getElementById("goodsList");
+  const loadMoreBtn = document.getElementById("loadMoreBtn");
+  const closeBtn = document.getElementById("closeBtn");
+  const initialDisplayCount = 9;
+  let isExpanded = false;
+
+  if (goods.length > initialDisplayCount) {
+    loadMoreBtn.style.display = "block";
+
+    loadMoreBtn.addEventListener("click", function () {
+      for (let i = initialDisplayCount; i < goods.length; i++) {
+        const list = goods[i];
+        const li = document.createElement("li");
+        li.className = "goods-item";
+        li.innerHTML = `
+          <a href="#">
+            <img src="/images/${list.itemphotos[0]}" alt="${list.name}" />
+            <p>${list.name}</p>
+            <p>¥${list.price}</p>
+          </a>
+        `;
+
+        const newAnchor = li.querySelector("a");
+        newAnchor.style.display = "block";
+        newAnchor.style.textAlign = "left";
+        newAnchor.style.textDecoration = "none";
+        newAnchor.style.color = "#000";
+
+        const newParagraphs = newAnchor.querySelectorAll("p");
+        newParagraphs.forEach((p) => {
+          p.style.textAlign = "left";
+          p.style.marginTop = "0.5rem";
+          p.style.color = "#000";
+        });
+
+        goodsList.appendChild(li);
+      }
+
+      adjustResponsiveStyles();
+
+      loadMoreBtn.style.display = "none";
+      closeBtn.style.display = "block";
+      isExpanded = true;
+    });
+
+    closeBtn.addEventListener("click", function () {
+      const itemsToRemove = Array.from(goodsList.children).slice(
+        initialDisplayCount,
+      );
+      itemsToRemove.forEach((item) => goodsList.removeChild(item));
+
+      closeBtn.style.display = "none";
+      loadMoreBtn.style.display = "block";
+      isExpanded = false;
+    });
+
+    function adjustResponsiveStyles() {
+      const newItems = document.querySelectorAll(
+        ".goods-item:nth-child(n + 10)",
+      );
+
+      newItems.forEach((item) => {
+        item.style.width = "calc(33.33% - 1rem)";
+        item.style.marginBottom = "3rem";
+        item.style.maxWidth = "350px";
+
+        if (window.matchMedia("(max-width: 650px)").matches) {
+          item.style.width = "calc(50% - 1rem)";
+        }
+      });
+    }
+  }
+</script>
 
 <style lang="scss">
   .goods-card {
@@ -71,5 +154,18 @@ console.log(goods);
       box-sizing: border-box;
       max-width: 350px;
     }
+  }
+
+  .load-more-btn {
+    display: block;
+    padding: 10px;
+    margin: 0 auto 30px;
+    text-align: center;
+  }
+  .close-btn {
+    display: block;
+    padding: 10px;
+    margin: 0 auto 30px;
+    text-align: center;
   }
 </style>
