@@ -1,5 +1,8 @@
 ---
 import goods from "../data/goods.json";
+import GoodsLayout from "../layouts/goodsLayout.astro";
+import Index from "../pages/index.astro";
+import Index3 from "../pages/index3.astro";
 console.log(goods);
 ---
 
@@ -8,7 +11,7 @@ console.log(goods);
     {
       goods.slice(0, 9).map((list, index) => (
         <li class="goods-item" key={index}>
-          <a href="#">
+          <a href="">
             <img src={`/images/${list.itemphotos[0]}`} alt={list.name} />
             <p>{list.name}</p>
             <p>¥{list.price}</p>
@@ -19,8 +22,8 @@ console.log(goods);
   </ul>
 </div>
 
-<button id="loadMoreBtn" class="load-more-btn" style="display: none;">
-  Read More
+<button id="loadMoreBtn" class="load-more-btn" style="display: none;"
+  >More
 </button>
 
 <button id="closeBtn" class="close-btn" style="display: none;"> Close</button>
@@ -43,7 +46,7 @@ console.log(goods);
         const li = document.createElement("li");
         li.className = "goods-item";
         li.innerHTML = `
-          <a href="#">
+          <a href="">
             <img src="/images/${list.itemphotos[0]}" alt="${list.name}" />
             <p>${list.name}</p>
             <p>¥${list.price}</p>
@@ -95,7 +98,6 @@ console.log(goods);
         item.style.width = "calc(33.33% - 1rem)";
         item.style.marginBottom = "3rem";
         item.style.maxWidth = "350px";
-        item.style.backgroundColor = "rgb(229, 241, 251)";
         item.style.padding = "15px";
 
         const img = item.querySelector("img");
@@ -103,6 +105,7 @@ console.log(goods);
           img.style.width = "100%";
           img.style.maxWidth = "350px";
           img.style.height = "auto";
+          img.style.border = "#000 0.1px solid";
         }
 
         const anchor = item.querySelector("a");
@@ -191,13 +194,13 @@ console.log(goods);
 
   .load-more-btn {
     display: block;
-    padding: 10px;
+    padding: 5px 10px;
     margin: 0 auto 30px;
     text-align: center;
   }
   .close-btn {
     display: block;
-    padding: 10px;
+    padding: 5px 10px;
     margin: 0 auto 30px;
     text-align: center;
   }
