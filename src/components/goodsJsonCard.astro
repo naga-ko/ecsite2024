@@ -7,13 +7,13 @@ console.log(goods);
 ---
 
 <div class="goods-card">
-  <div class="goods-soldout">
-    <p class="goods-soldout-text">SOLD OUT</p>
-  </div>
   <ul class="goods-list" id="goodsList">
     {
       goods.slice(0, 9).map((list, index) => (
         <li class="goods-item" key={index}>
+          <div class="goods-soldout">
+            <p class="goods-soldout-text">SOLD OUT</p>
+          </div>
           <a href="">
             <img
               src={`/14_ecsite/images/${list.itemphotos[0]}`}
@@ -21,7 +21,7 @@ console.log(goods);
             />
             <p>{list.name}</p>
             <p>¥{list.price}</p>
-            <p class="sold"> {list.state}</p>
+            <p class="sold">{list.state}</p>
           </a>
         </li>
       ))
@@ -51,13 +51,16 @@ console.log(goods);
         const li = document.createElement("li");
         li.className = "goods-item";
         li.innerHTML = `
-          <a href="">
-            <img src="/14_ecsite/images/${list.itemphotos[0]}" alt="${list.name}" />
-            <p>${list.name}</p>
-            <p>¥${list.price}</p>
-            <p class="sold"> ${list.state}</p>
-          </a>
-        `;
+        <div class="goods-soldout">
+          <p class="goods-soldout-text">SOLD OUT</p>
+        </div>
+        <a href="">
+          <img src="/14_ecsite/images/${list.itemphotos[0]}" alt="${list.name}" />
+          <p>${list.name}</p>
+          <p>¥${list.price}</p>
+          <p class="sold"> ${list.state}</p>
+        </a>
+      `;
 
         const newAnchor = li.querySelector("a");
         newAnchor.style.display = "block";
@@ -76,6 +79,7 @@ console.log(goods);
       }
 
       adjustResponsiveStyles();
+      checkSoldOutStatus();
 
       loadMoreBtn.style.display = "none";
       closeBtn.style.display = "block";
@@ -134,9 +138,23 @@ console.log(goods);
         }
       });
     }
+
+    function checkSoldOutStatus() {
+      const soldItems = document.querySelectorAll(".sold");
+      soldItems.forEach((sold) => {
+        if (sold.innerHTML.trim() === "在庫なし") {
+          sold.style.color = "#f00";
+          const soldout =
+            sold.parentElement.parentElement.querySelector(".goods-soldout");
+          soldout.style.opacity = "1";
+        } else if (sold.innerHTML.trim() === "在庫あり") {
+          sold.style.color = "#00f";
+        }
+      });
+    }
+
+    checkSoldOutStatus();
   }
-  const soldout = document.querySelector(".goods-soldout");
-  const sold = document.querySelector(".sold");
 </script>
 
 <style lang="scss">
@@ -148,7 +166,7 @@ console.log(goods);
     justify-content: center;
 
     .goods-soldout {
-      display: none;
+      opacity: 0;
     }
   }
 
