@@ -21,6 +21,7 @@ console.log(goods);
             />
             <p>{list.name}</p>
             <p>¥{list.price}</p>
+            <p class="sold"> {list.state}</p>
           </a>
         </li>
       ))
@@ -54,6 +55,7 @@ console.log(goods);
             <img src="/14_ecsite/images/${list.itemphotos[0]}" alt="${list.name}" />
             <p>${list.name}</p>
             <p>¥${list.price}</p>
+            <p class="sold"> ${list.state}</p>
           </a>
         `;
 
@@ -133,7 +135,8 @@ console.log(goods);
       });
     }
   }
-  const sold = document.querySelector(".goods-soldout");
+  const soldout = document.querySelector(".goods-soldout");
+  const sold = document.querySelector(".sold");
 </script>
 
 <style lang="scss">
@@ -156,7 +159,7 @@ console.log(goods);
     list-style-type: none;
     gap: 1rem;
     max-width: calc(100% - 1rem);
-    justify-content: flex-start;
+    justify-content: center;
   }
 
   .goods-item {
