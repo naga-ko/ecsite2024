@@ -50,7 +50,7 @@
     ],
     "name": "商品名",
     "price": 15,
-    "state": true,
+    "state": false,
     "text": "魚肉のすり身",
     "id": 4971749110335,
     "colors": "赤",

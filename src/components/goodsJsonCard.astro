@@ -7,6 +7,9 @@ console.log(goods);
 ---
 
 <div class="goods-card">
+  <div class="goods-soldout">
+    <p class="goods-soldout-text">SOLD OUT</p>
+  </div>
   <ul class="goods-list" id="goodsList">
     {
       goods.slice(0, 9).map((list, index) => (
@@ -24,11 +27,9 @@ console.log(goods);
     }
   </ul>
 </div>
-
 <button id="loadMoreBtn" class="load-more-btn" style="display: none;"
   >More
 </button>
-
 <button id="closeBtn" class="close-btn" style="display: none;"> Close</button>
 
 <script>
@@ -132,6 +133,7 @@ console.log(goods);
       });
     }
   }
+  const sold = document.querySelector(".goods-soldout");
 </script>
 
 <style lang="scss">
@@ -141,6 +143,10 @@ console.log(goods);
   .goods-card {
     display: flex;
     justify-content: center;
+
+    .goods-soldout {
+      display: none;
+    }
   }
 
   .goods-list {
