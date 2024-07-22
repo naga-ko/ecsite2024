@@ -12,7 +12,10 @@ console.log(goods);
       goods.slice(0, 9).map((list, index) => (
         <li class="goods-item" key={index}>
           <a href="">
-            <img src={`/images/${list.itemphotos[0]}`} alt={list.name} />
+            <img
+              src={`/14_ecsite/images/${list.itemphotos[0]}`}
+              alt={list.name}
+            />
             <p>{list.name}</p>
             <p>¥{list.price}</p>
           </a>
@@ -47,7 +50,7 @@ console.log(goods);
         li.className = "goods-item";
         li.innerHTML = `
           <a href="">
-            <img src="/images/${list.itemphotos[0]}" alt="${list.name}" />
+            <img src="/14_ecsite/images/${list.itemphotos[0]}" alt="${list.name}" />
             <p>${list.name}</p>
             <p>¥${list.price}</p>
           </a>
