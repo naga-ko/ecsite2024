@@ -65,7 +65,7 @@ console.log(goods);
         }
 
         adjustResponsiveStyles();
-        checkSoldOutStatus();
+        checkSoldOutStatus(); // ここで呼び出す
 
         loadMoreBtn.style.display = "none";
         closeBtn.style.display = "block";
@@ -128,6 +128,8 @@ console.log(goods);
             item.style.width = "calc(80% - 1rem)";
           }
         });
+
+        checkSoldOutStatus(); // 新しく追加されたアイテムに対しても sold out の状態をチェック
       }
 
       function checkSoldOutStatus() {
@@ -138,10 +140,6 @@ console.log(goods);
             const soldout =
               sold.parentElement.parentElement.querySelector(".goods-soldout");
             soldout.style.opacity = "1";
-            soldout.style.maxWidth = "350px";
-            soldout.style.width = "100%";
-            soldout.style.fontSize = "30px";
-            soldout.style.position = "absolute";
           } else if (sold.innerHTML.trim() === "在庫あり") {
             sold.style.color = "#00f";
             const soldout =
