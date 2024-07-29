@@ -6,315 +6,112 @@ import Index3 from "../pages/index3.astro";
 console.log(goods);
 ---
 
-<div class="goods-card">
-  <ul class="goods-list" id="goodsList">
-    {
-      goods.slice(0, 9).map((list, index) => (
-        <li class="goods-item" key={index}>
-          <a class="goods-item__link" href="">
-            <div class="goods-soldout">
-              <p class="goods-soldout-text">SOLD OUT</p>
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>商品一覧</title>
+    <style lang="scss">
+      .merchandise-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+      .merchandise-List {
+        margin-bottom: 20px;
+      }
+      .card {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+        width: calc(33.333% - 16px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s;
+      }
+      .card img {
+        width: 100%;
+        height: auto;
+      }
+      .card h3 {
+        margin: 0;
+        padding: 16px;
+        background-color: #f8f8f8;
+      }
+      .card p {
+        padding: 0 16px 16px;
+        margin: 0;
+      }
+      .card:hover {
+        transform: scale(1.05);
+      }
+      .hidden {
+        display: none;
+      }
+      .button-container {
+        text-align: center;
+        margin-top: 16px;
+      }
+      .load-more {
+        padding: 8px 16px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      @media (max-width: 800px) {
+        .card {
+          width: calc(50% - 16px);
+        }
+      }
+
+      @media (max-width: 500px) {
+        .card {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="merchandise">
+      <h2 class="merchandise-List">商品一覧</h2>
+      <div class="merchandise-container">
+        {
+          goods.map((list, index) => (
+            <div class={`card ${index >= 9 ? "hidden" : ""}`} key={index}>
+              <div>
+                <img
+                  src={`/14_ecsite/images/${list.itemphotos[0]}`}
+                  alt={list.name}
+                />
+              </div>
+              <h3>{list.name}</h3>
+              <p>{list.price}円</p>
+              <p class="sold">{list.state}</p>
             </div>
-            <img
-              class="goods-img"
-              src={`/14_ecsite/images/${list.itemphotos[0]}`}
-              alt={list.name}
-            />
-            <p>{list.name}</p>
-            <p>¥{list.price}</p>
-            <p class="sold">{list.state}</p>
-          </a>
-        </li>
-      ))
-    }
-  </ul>
-</div>
-<button id="loadMoreBtn" class="load-more-btn">More</button>
-<button id="closeBtn" class="close-btn" style="display: none;">Close</button>
-
-<script>
-  import goods from "../data/goods.json";
-
-  document.addEventListener("DOMContentLoaded", function () {
-    const goodsList = document.getElementById("goodsList");
-    const loadMoreBtn = document.getElementById("loadMoreBtn");
-    const closeBtn = document.getElementById("closeBtn");
-    const initialDisplayCount = 9;
-    let isExpanded = false;
-
-    function addHoverEffect(item) {
-      const link = item.querySelector(".goods-item__link");
-      const soldout = item.querySelector(".goods-soldout");
-
-      link.addEventListener("mouseenter", () => {
-        if (soldout) {
-          soldout.style.aspectRatio = "3 / 2";
-          soldout.style.width = "100%";
-          soldout.style.height = "auto";
+          ))
         }
-        checkSoldOutStatus(); // ホバー時に在庫状況を確認する
-      });
+      </div>
+      <div class="button-container">
+        <button class="load-more">さらに表示</button>
+      </div>
+    </section>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var loadMoreButton = document.querySelector(".load-more");
+        var cards = document.querySelectorAll(".card.hidden");
 
-      link.addEventListener("mouseleave", () => {
-        if (soldout) {
-          soldout.style.aspectRatio = "";
-          soldout.style.width = "";
-          soldout.style.height = "";
-        }
-        checkSoldOutStatus(); // ホバーを外したときにも在庫状況を確認する
-      });
-    }
+        loadMoreButton.addEventListener("click", function () {
+          cards.forEach(function (card) {
+            card.classList.toggle("hidden");
+          });
 
-    function adjustResponsiveStyles() {
-      const newItems = document.querySelectorAll(
-        ".goods-item:nth-child(n + 10)",
-      );
-      newItems.forEach((item) => {
-        item.style.textDecoration = "none";
-        item.style.display = "block";
-        item.style.width = "calc(33.33% - 1rem)";
-        item.style.marginBottom = "3rem";
-        item.style.maxWidth = "350px";
-
-        const img = item.querySelector("img");
-        if (img) {
-          img.style.width = "100%";
-          img.style.maxWidth = "350px";
-          img.style.height = "auto";
-          img.style.border = "#000 0.1px solid";
-        }
-
-        const anchor = item.querySelector("a");
-        if (anchor) {
-          anchor.style.display = "block";
-          anchor.style.textAlign = "left";
-          anchor.style.textDecoration = "none";
-          anchor.style.color = "#000";
-        }
-
-        const paragraphs = item.querySelectorAll("p");
-        paragraphs.forEach((p) => {
-          p.style.textAlign = "left";
-          p.style.marginTop = "0.5rem";
-          p.style.color = "#000";
+          if (loadMoreButton.textContent === "さらに表示") {
+            loadMoreButton.textContent = "表示を減らす";
+          } else {
+            loadMoreButton.textContent = "さらに表示";
+          }
         });
-
-        const soldout = item.querySelector(".goods-soldout");
-        if (soldout) {
-          soldout.style.width = item.style.width;
-        }
-
-        if (window.matchMedia("(max-width: 1600px)").matches) {
-          item.style.width = "calc(33.33% - 1rem)";
-        }
-        if (window.matchMedia("(max-width: 1000px)").matches) {
-          item.style.width = "calc(50% - 1rem)";
-        }
-        if (window.matchMedia("(max-width: 650px)").matches) {
-          item.style.width = "calc(80% - 1rem)";
-        }
-
-        addHoverEffect(item); // ここでホバーイベントを追加
       });
-
-      checkSoldOutStatus();
-    }
-
-    function checkSoldOutStatus() {
-      const soldItems = document.querySelectorAll(".sold");
-      soldItems.forEach((sold) => {
-        const soldout =
-          sold.parentElement.parentElement.querySelector(".goods-soldout");
-        if (sold.innerHTML.trim() === "在庫なし") {
-          sold.style.color = "#f00";
-          if (soldout) {
-            const soldoutText = document.querySelector(".goods-soldout-text");
-            soldoutText.style.color = "#f00";
-            soldout.style.opacity = "1";
-            soldout.style.maxWidth = "350px";
-            soldout.style.width = sold.parentElement.parentElement.style.width;
-            soldout.style.fontSize = "24px";
-            soldout.style.position = "absolute";
-            soldout.style.display = "flex";
-            soldout.style.justifyContent = "center";
-            soldout.style.alignItems = "center";
-            soldout.style.backgroundColor = "rgba(255, 255, 255, 0.7)";
-            soldout.style.zIndex = "20";
-          }
-        } else if (sold.innerHTML.trim() === "在庫あり") {
-          sold.style.color = "#00f";
-          if (soldout) {
-            soldout.style.opacity = "0";
-            soldout.style.fontSize = "24px";
-            soldout.style.position = "absolute";
-            soldout.style.display = "flex";
-            soldout.style.justifyContent = "center";
-            soldout.style.alignItems = "center";
-            soldout.style.backgroundColor = "rgba(255, 255, 255, 0.7)";
-            soldout.style.zIndex = "20";
-          }
-        }
-      });
-    }
-
-    if (goods.length > initialDisplayCount) {
-      loadMoreBtn.style.display = "block";
-
-      loadMoreBtn.addEventListener("click", function () {
-        for (let i = initialDisplayCount; i < goods.length; i++) {
-          const list = goods[i];
-          const li = document.createElement("li");
-          li.className = "goods-item";
-          li.innerHTML = `
-          <div class="goods-soldout">
-            <p class="goods-soldout-text">SOLD OUT</p>
-          </div>
-          <a class="goods-item__link" href="">
-            <img src="/14_ecsite/images/${list.itemphotos[0]}" alt="${list.name}" />
-            <p>${list.name}</p>
-            <p>¥${list.price}</p>
-            <p class="sold">${list.state}</p>
-          </a>
-        `;
-
-          goodsList.appendChild(li);
-          addHoverEffect(li); // ここでホバーイベントを追加
-        }
-
-        adjustResponsiveStyles();
-        checkSoldOutStatus();
-
-        loadMoreBtn.style.display = "none";
-        closeBtn.style.display = "block";
-        isExpanded = true;
-      });
-
-      closeBtn.addEventListener("click", function () {
-        const itemsToRemove = Array.from(goodsList.children).slice(
-          initialDisplayCount,
-        );
-        itemsToRemove.forEach((item) => goodsList.removeChild(item));
-
-        closeBtn.style.display = "none";
-        loadMoreBtn.style.display = "block";
-        isExpanded = false;
-      });
-
-      checkSoldOutStatus();
-    }
-  });
-</script>
-
-<style lang="scss">
-  body {
-    background-color: #fff;
-  }
-
-  .goods-card {
-    a {
-      position: relative;
-    }
-    .goods-soldout {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      transition: all 0.3s ease;
-    }
-
-    .goods-soldout-text {
-      color: #f00;
-      font-size: 24px;
-    }
-  }
-
-  .goods-list {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0;
-    list-style-type: none;
-    gap: 1rem;
-    max-width: calc(100% - 1rem);
-    justify-content: center;
-  }
-
-  .goods-item {
-    text-decoration: none;
-    display: block;
-    width: calc(33.33% - 1rem);
-    margin-bottom: 3rem;
-    box-sizing: border-box;
-    max-width: 350px;
-    z-index: 10;
-
-    &__link {
-      position: relative;
-      overflow: hidden; // オーバーフローを隠すことで、ホバー時のちらつきを防ぐ
-      transition:
-        transform 0.3s ease,
-        opacity 0.3s ease; // トランジションを適用
-    }
-
-    &:hover .goods-soldout {
-      aspect-ratio: 3 / 2;
-      width: 100%;
-      height: auto;
-      opacity: 1;
-      transition: opacity 0.3s ease; // opacityのトランジション
-    }
-
-    img {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 3 / 2;
-      height: auto;
-      border: #000 0.1px solid;
-      transition: transform 0.3s ease; // 画像のトランジション
-    }
-
-    a {
-      display: block;
-      text-align: left;
-      list-style-type: none;
-      text-decoration: none;
-      color: #000;
-    }
-
-    p {
-      text-align: left;
-      margin-top: 0.5rem;
-      color: #000;
-    }
-  }
-
-  @media (max-width: 1000px) {
-    .goods-item {
-      width: calc(50% - 1rem);
-      margin-bottom: 3rem;
-      box-sizing: border-box;
-      max-width: 350px;
-    }
-  }
-
-  @media (max-width: 650px) {
-    .goods-item {
-      width: calc(80% - 1rem);
-      margin-bottom: 3rem;
-      box-sizing: border-box;
-      max-width: 350px;
-    }
-  }
-
-  .load-more-btn {
-    display: block;
-    padding: 5px 10px;
-    margin: 0 auto 30px;
-    text-align: center;
-  }
-
-  .close-btn {
-    display: block;
-    padding: 5px 10px;
-    margin: 0 auto 30px;
-    text-align: center;
-  }
-</style>
+    </script>
+  </body>
+</html>
