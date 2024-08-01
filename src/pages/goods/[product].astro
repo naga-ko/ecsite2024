@@ -1,20 +1,31 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-
 import goods from "../../data/goods.json";
+
 export const getStaticPaths = async () => {
-  return goods.map(({ url }) => {
-    return {
-      params: { product: url },
-    };
-  });
+  return goods.map(({ url }) => ({
+    params: { product: url.split("/").pop() }, // URLから最後の部分を取得
+  }));
 };
+
 const { product } = Astro.params;
-const goodsData = goods.find(({ url }) => product === url);
+const goodsData = goods.find((item) => item.url.split("/").pop() === product);
+
+if (!goodsData) {
+  throw new Error("商品が見つかりません");
+}
 ---
 
 <Layout>
-  <p>{goodsData.name}</p>
-  <p>{goodsData.price}</p>
-  <img src=`/14_ecsite/images/${goodsData.itemphotos[0]}` />
+  <section>
+    <h1>{goodsData.name}</h1>
+    <p>価格: {goodsData.price}円</p>
+    <p>説明: {goodsData.text}</p>
+    <p>色: {goodsData.colors}</p>
+    <p>メーカー: {goodsData.maker}</p>
+    <img
+      src={`/14_ecsite/images/${goodsData.itemphotos[0]}`}
+      alt={goodsData.name}
+    />
+  </section>
 </Layout>

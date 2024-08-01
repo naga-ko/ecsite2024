@@ -11,7 +11,7 @@
     "id": 27002,
     "colors": "黄",
     "maker": "（株）やおきん",
-    "url": "umaibo"
+    "url": "product/1"
   },
   {
     "itemphotos": [
@@ -26,7 +26,7 @@
     "id": 4971749110335,
     "colors": "赤",
     "maker": "（株）菓道",
-    "url": "kabayakisan"
+    "url": "/product/2"
   },
   {
     "itemphotos": [
@@ -40,7 +40,7 @@
     "id": 27002,
     "colors": "黄",
     "maker": "（株）やおきん",
-    "url": "umaibo"
+    "url": "/product/3"
   },
   {
     "itemphotos": [
@@ -55,7 +55,7 @@
     "id": 4971749110335,
     "colors": "赤",
     "maker": "（株）菓道",
-    "url": "kabayakisan"
+    "url": "/product/4"
   },
   {
     "itemphotos": [
@@ -69,7 +69,7 @@
     "id": 27002,
     "colors": "黄",
     "maker": "（株）やおきん",
-    "url": "umaibo"
+    "url": "/product/5"
   },
   {
     "itemphotos": [
@@ -84,7 +84,7 @@
     "id": 4971749110335,
     "colors": "赤",
     "maker": "（株）菓道",
-    "url": "kabayakisan"
+    "url": "/product/6"
   },
   {
     "itemphotos": [
@@ -98,7 +98,7 @@
     "id": 27002,
     "colors": "黄",
     "maker": "（株）やおきん",
-    "url": "umaibo"
+    "url": "/product/7"
   },
   {
     "itemphotos": [
@@ -113,7 +113,7 @@
     "id": 4971749110335,
     "colors": "赤",
     "maker": "（株）菓道",
-    "url": "kabayakisan"
+    "url": "/product/8"
   },
   {
     "itemphotos": [
@@ -127,7 +127,7 @@
     "id": 27002,
     "colors": "黄",
     "maker": "（株）やおきん",
-    "url": "umaibo"
+    "url": "/product/9"
   },
   {
     "itemphotos": [
@@ -142,7 +142,7 @@
     "id": 4971749110335,
     "colors": "赤",
     "maker": "（株）菓道",
-    "url": "kabayakisan"
+    "url": "/product/10"
   },
   {
     "itemphotos": [
@@ -156,51 +156,7 @@
     "id": 27002,
     "colors": "黄",
     "maker": "（株）やおきん",
-    "url": "umaibo"
-  },
-  {
-    "itemphotos": [
-      "kabayakisan01.jpg",
-      "kabayakisan02.jpg",
-      "kabayakisan03.jpg"
-    ],
-    "name": "商品名",
-    "price": 15,
-    "state": "在庫なし",
-    "text": "魚肉のすり身。",
-    "id": 4971749110335,
-    "colors": "赤",
-    "maker": "（株）菓道",
-    "url": "kabayakisan"
-  },
-  {
-    "itemphotos": [
-      "umaibo01.jpg",
-      "umaibo02.jpg"
-    ],
-    "name": "商品名",
-    "price": 12,
-    "state": "在庫あり",
-    "text": "スパイスとスモーク",
-    "id": 27002,
-    "colors": "黄",
-    "maker": "（株）やおきん",
-    "url": "umaibo"
-  },
-  {
-    "itemphotos": [
-      "kabayakisan01.jpg",
-      "kabayakisan02.jpg",
-      "kabayakisan03.jpg"
-    ],
-    "name": "商品名",
-    "price": 15,
-    "state": "在庫あり",
-    "text": "魚肉のすり身。",
-    "id": 4971749110335,
-    "colors": "赤",
-    "maker": "（株）菓道",
-    "url": "kabayakisan"
+    "url": "/product/11"
   },
   {
     "itemphotos": [
@@ -215,6 +171,50 @@
     "id": 4971749110335,
     "colors": "赤",
     "maker": "（株）菓道",
-    "url": "kabayakisan"
+    "url": "/product/12"
+  },
+  {
+    "itemphotos": [
+      "umaibo01.jpg",
+      "umaibo02.jpg"
+    ],
+    "name": "商品名",
+    "price": 12,
+    "state": "在庫あり",
+    "text": "スパイスとスモーク",
+    "id": 27002,
+    "colors": "黄",
+    "maker": "（株）やおきん",
+    "url": "/product/13"
+  },
+  {
+    "itemphotos": [
+      "kabayakisan01.jpg",
+      "kabayakisan02.jpg",
+      "kabayakisan03.jpg"
+    ],
+    "name": "商品名",
+    "price": 15,
+    "state": "在庫あり",
+    "text": "魚肉のすり身。",
+    "id": 4971749110335,
+    "colors": "赤",
+    "maker": "（株）菓道",
+    "url": "/product/14"
+  },
+  {
+    "itemphotos": [
+      "kabayakisan01.jpg",
+      "kabayakisan02.jpg",
+      "kabayakisan03.jpg"
+    ],
+    "name": "商品名",
+    "price": 15,
+    "state": "在庫なし",
+    "text": "魚肉のすり身。",
+    "id": 4971749110335,
+    "colors": "赤",
+    "maker": "（株）菓道",
+    "url": "/product/15"
   }
 ]
