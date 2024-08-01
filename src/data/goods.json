@@ -1,220 +1,123 @@
 [
   {
     "itemphotos": [
-      "umaibo01.jpg",
-      "umaibo02.jpg"
+      "fi1-1.png",
+      "fi1-2.png"
     ],
-    "name": "商品名",
-    "price": 12,
-    "state": "在庫あり",
-    "text": "スパイスとスモーク",
-    "id": 27002,
-    "colors": "黄",
-    "maker": "（株）やおきん",
+    "name": "DIO フィギュア",
+    "price": 14000,
+    "state": "在庫なし",
+    "text": "ジョジョの奇妙な冒険",
     "url": "product/1"
   },
   {
     "itemphotos": [
-      "kabayakisan01.jpg",
-      "kabayakisan02.jpg",
-      "kabayakisan03.jpg"
+      "fi2-1.png",
+      "fi2-2.png"
     ],
-    "name": "商品名",
-    "price": 15,
+    "name": "キング 両翼決戦 フィギュア",
+    "price": 10000,
     "state": "在庫あり",
-    "text": "魚肉のすり身",
-    "id": 4971749110335,
-    "colors": "赤",
-    "maker": "（株）菓道",
+    "text": "ワンピース",
     "url": "/product/2"
   },
   {
     "itemphotos": [
-      "umaibo01.jpg",
-      "umaibo02.jpg"
+      "fi3-1.png",
+      "fi3-2.png"
     ],
-    "name": "商品名",
-    "price": 12,
+    "name": "ヤマト フィギュア",
+    "price": 7000,
     "state": "在庫あり",
-    "text": "スパイスとスモーク",
-    "id": 27002,
-    "colors": "黄",
-    "maker": "（株）やおきん",
+    "text": "ワンピース",
     "url": "/product/3"
   },
   {
     "itemphotos": [
-      "kabayakisan01.jpg",
-      "kabayakisan02.jpg",
-      "kabayakisan03.jpg"
+      "fi4-1.png",
+      "fi4-2.png"
     ],
-    "name": "商品名",
-    "price": 15,
-    "state": "在庫なし",
-    "text": "魚肉のすり身",
-    "id": 4971749110335,
-    "colors": "赤",
-    "maker": "（株）菓道",
+    "name": "ギニュー フィギュア",
+    "price": 10000,
+    "state": "在庫あり",
+    "text": "ドラゴンボール",
     "url": "/product/4"
   },
   {
     "itemphotos": [
-      "umaibo01.jpg",
-      "umaibo02.jpg"
+      "fi5-1.png",
+      "fi5-2.png"
     ],
-    "name": "商品名",
-    "price": 12,
-    "state": "在庫あり",
-    "text": "スパイスとスモーク",
-    "id": 27002,
-    "colors": "黄",
-    "maker": "（株）やおきん",
+    "name": "耳郎響香 フィギュア",
+    "price": 9000,
+    "state": "在庫なし",
+    "text": "僕のヒーローアカデミア",
     "url": "/product/5"
   },
   {
     "itemphotos": [
-      "kabayakisan01.jpg",
-      "kabayakisan02.jpg",
-      "kabayakisan03.jpg"
+      "fi6-1.png",
+      "fi6-2.png"
     ],
-    "name": "商品名",
-    "price": 15,
+    "name": "うちはサスケ フィギュア",
+    "price": 2000,
     "state": "在庫あり",
-    "text": "魚肉のすり身。",
-    "id": 4971749110335,
-    "colors": "赤",
-    "maker": "（株）菓道",
+    "text": "NARUTO",
     "url": "/product/6"
   },
   {
     "itemphotos": [
-      "umaibo01.jpg",
-      "umaibo02.jpg"
+      "fi7-1.png",
+      "fi7-2.png"
     ],
-    "name": "商品名",
-    "price": 12,
+    "name": "デイダラ フィギュア",
+    "price": 2000,
     "state": "在庫なし",
-    "text": "スパイスとスモーク",
-    "id": 27002,
-    "colors": "黄",
-    "maker": "（株）やおきん",
+    "text": "NARUTO",
     "url": "/product/7"
   },
   {
     "itemphotos": [
-      "kabayakisan01.jpg",
-      "kabayakisan02.jpg",
-      "kabayakisan03.jpg"
+      "fi8-1.png",
+      "fi8-2.png"
     ],
-    "name": "商品名",
-    "price": 15,
+    "name": "ルミナス フィギュア",
+    "price": 2000,
     "state": "在庫あり",
-    "text": "魚肉のすり身。",
-    "id": 4971749110335,
-    "colors": "赤",
-    "maker": "（株）菓道",
+    "text": "転生したらスライムだった件",
     "url": "/product/8"
   },
   {
     "itemphotos": [
-      "umaibo01.jpg",
-      "umaibo02.jpg"
+      "fi9-1.png",
+      "fi9-2.png"
     ],
-    "name": "商品名",
-    "price": 12,
+    "name": "孫悟飯（ビースト） フィギュア",
+    "price": 3000,
     "state": "在庫あり",
-    "text": "スパイスとスモーク",
-    "id": 27002,
-    "colors": "黄",
-    "maker": "（株）やおきん",
+    "text": "ドラゴンボール",
     "url": "/product/9"
   },
   {
     "itemphotos": [
-      "kabayakisan01.jpg",
-      "kabayakisan02.jpg",
-      "kabayakisan03.jpg"
+      "fi10-1.png",
+      "fi10-2.png"
     ],
-    "name": "商品名",
-    "price": 15,
+    "name": "河東ぱい フィギュア",
+    "price": 4000,
     "state": "在庫あり",
-    "text": "魚肉のすり身。",
-    "id": 4971749110335,
-    "colors": "赤",
-    "maker": "（株）菓道",
+    "text": "ぽんのみち",
     "url": "/product/10"
   },
   {
     "itemphotos": [
-      "umaibo01.jpg",
-      "umaibo02.jpg"
+      "fi11-1.png",
+      "fi11-2.png"
     ],
-    "name": "商品名",
-    "price": 12,
-    "state": "在庫あり",
-    "text": "スパイスとスモーク",
-    "id": 27002,
-    "colors": "黄",
-    "maker": "（株）やおきん",
+    "name": "大神ミオ フィギュア",
+    "price": 4000,
+    "state": "在庫なし",
+    "text": "hololive",
     "url": "/product/11"
-  },
-  {
-    "itemphotos": [
-      "kabayakisan01.jpg",
-      "kabayakisan02.jpg",
-      "kabayakisan03.jpg"
-    ],
-    "name": "商品名",
-    "price": 15,
-    "state": "在庫なし",
-    "text": "魚肉のすり身。",
-    "id": 4971749110335,
-    "colors": "赤",
-    "maker": "（株）菓道",
-    "url": "/product/12"
-  },
-  {
-    "itemphotos": [
-      "umaibo01.jpg",
-      "umaibo02.jpg"
-    ],
-    "name": "商品名",
-    "price": 12,
-    "state": "在庫あり",
-    "text": "スパイスとスモーク",
-    "id": 27002,
-    "colors": "黄",
-    "maker": "（株）やおきん",
-    "url": "/product/13"
-  },
-  {
-    "itemphotos": [
-      "kabayakisan01.jpg",
-      "kabayakisan02.jpg",
-      "kabayakisan03.jpg"
-    ],
-    "name": "商品名",
-    "price": 15,
-    "state": "在庫あり",
-    "text": "魚肉のすり身。",
-    "id": 4971749110335,
-    "colors": "赤",
-    "maker": "（株）菓道",
-    "url": "/product/14"
-  },
-  {
-    "itemphotos": [
-      "kabayakisan01.jpg",
-      "kabayakisan02.jpg",
-      "kabayakisan03.jpg"
-    ],
-    "name": "商品名",
-    "price": 15,
-    "state": "在庫なし",
-    "text": "魚肉のすり身。",
-    "id": 4971749110335,
-    "colors": "赤",
-    "maker": "（株）菓道",
-    "url": "/product/15"
   }
 ]
