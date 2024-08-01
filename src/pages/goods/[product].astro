@@ -33,12 +33,13 @@ if (!goodsData) {
         margin-right: auto;
         max-width: 1000px;
         p {
+          padding-top: 10px;
           padding-bottom: 10px;
           font-size: 20px;
         }
         h3 {
           font-size: 30px;
-          padding-bottom: 20px;
+          padding-bottom: 10px;
         }
       }
       @media (max-width: 640px) {
@@ -153,6 +154,7 @@ if (!goodsData) {
       </div>
       <div class="product-detail">
         <h3>{goodsData.name}</h3>
+        <hr />
         <p>{goodsData.text}</p>
         <p>{goodsData.price}円</p>
         <p id="soldStatus" class="sold" data-state={goodsData.state}>
